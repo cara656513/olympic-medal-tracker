@@ -31,17 +31,40 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
     const newInfo = {
       id: new Date().getTime(),
       nation: nation,
-      gold: gold,
-      silver: silver,
-      bronze: bronze
+      gold: Number(gold),
+      silver: Number(silver),
+      bronze: Number(bronze)
+    }
+
+    if (!newInfo.nation.trim()) {
+      alert('국가명을 입력하세요');
+      return;
     }
     setAllInfo([...allInfo, newInfo])
+
   }
 
+  const handleDelete = (id) => {
+    const deletedInfo = allInfo.filter(function (info) {
+      return info.id != id
+    })
+    setAllInfo(deletedInfo);
+  }
 
+  // const handleEdit = (name) => {
+  //   const editedInfo = {
+  //     nation: nation,
+  //     gold: Number(gold),
+  //     silver: Number(silver),
+  //     bronze: Number(bronze)
+  //   }
+
+  //   if (editedInfo.nation===info.name)
+  // }
 
   return (
     <>
@@ -135,7 +158,7 @@ function App() {
                   <div style={indexStyle}>{info.bronze}</div>
                 </div>
                 <div style={indexStyle}>
-                  <button>삭제</button>
+                  <button onClick={() => handleDelete(info.id)}>삭제</button>
                 </div>
               </div>
             )
