@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Info from './components/Info';
+import Info from './components/MedalList';
 
 function App() {
   const style = {
@@ -108,6 +108,8 @@ function App() {
     setBronze("");
   }
 
+  const listItems = ["국가명", "금메달", "은메달", "동메달", "액션"];
+
   return (
     <>
       <div style={{
@@ -188,22 +190,11 @@ function App() {
         </div>
         <div style={style}>
           <div style={alignStyle}>
-            <div>
-              <div style={indexStyle}>국가명</div>
-            </div>
-            <div>
-              <div style={indexStyle}>금메달</div>
-            </div>
-            <div>
-              <div style={indexStyle}>은메달</div>
-            </div>
-            <div>
-              <div style={indexStyle}>동메달</div>
-            </div>
-            <div>
-              <div style={indexStyle}>액션</div>
-            </div>
+            {listItems.map(function (item) {
+              return <div style={indexStyle}>{item}</div>
+            })}
           </div>
+
           {allInfo.sort((a, b) => b.gold - a.gold).map(function (info) {
             return <Info
               key={info.id}
@@ -220,3 +211,12 @@ function App() {
 
 export default App
 
+// const Item = (item) => {
+//   const indexStyle = {
+//     width: "100px"
+//   }
+
+//   return (
+//     <div style={indexStyle}>{item}</div>
+//   )
+// }
