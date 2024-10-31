@@ -99,9 +99,6 @@ function App() {
       return;
     }
 
-    if (!allInfo.map((info) => info.nation).includes(editedInfo.nation)) {
-    }
-
     setNation("");
     setGold("");
     setSilver("");
@@ -132,9 +129,7 @@ function App() {
                   }}
                 />
               </div>
-              <div
-
-              ><h3>금메달</h3>
+              <div><h3>금메달</h3>
                 <input
                   style={{
                     width: "150px"
@@ -210,13 +205,3 @@ function App() {
 }
 
 export default App
-
-// const Item = (item) => {
-//   const indexStyle = {
-//     width: "100px"
-//   }
-
-//   return (
-//     <div style={indexStyle}>{item}</div>
-//   )
-// }
