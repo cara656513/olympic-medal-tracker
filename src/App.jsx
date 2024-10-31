@@ -43,6 +43,9 @@ function App() {
     if (!newInfo.nation.trim()) {
       alert('국가명을 입력하세요');
       return;
+    } else if (allInfo.map(info => info.nation).includes(newInfo.nation)) {
+      alert('이미 존재하는 국가명입니다');
+      return;
     }
     setAllInfo([...allInfo, newInfo])
 
@@ -55,16 +58,43 @@ function App() {
     setAllInfo(deletedInfo);
   }
 
-  // const handleEdit = (name) => {
-  //   const editedInfo = {
-  //     nation: nation,
-  //     gold: Number(gold),
-  //     silver: Number(silver),
-  //     bronze: Number(bronze)
-  //   }
+  const handleEdit = () => {
+    const editedInfo = {
+      nation: nation,
+      gold: Number(gold),
+      silver: Number(silver),
+      bronze: Number(bronze)
+    }
 
-  //   if (editedInfo.nation===info.name)
-  // }
+    //flag
+    let isFound = false;
+
+    const editedAllInfo = allInfo.map((info) => {
+      if (info.nation === editedInfo.nation) {
+        isFound = true;
+        return {
+          id: info.id,
+          nation: info.nation,
+          gold: Number(editedInfo.gold),
+          silver: Number(editedInfo.silver),
+          bronze: Number(editedInfo.bronze)
+        }
+      } else {
+        return info;
+      }
+    })
+
+    if (isFound) {
+      setAllInfo(editedAllInfo);
+    } else {
+      alert('먼저 국가 추가를 해주세요.');
+      return;
+    }
+
+    if (!allInfo.map((info) => info.nation).includes(editedInfo.nation)) {
+    }
+
+  }
 
   return (
     <>
@@ -119,7 +149,10 @@ function App() {
                 <button
                   type="submit"
                 >국가 추가</button>
-                <button>업데이트</button>
+                <button
+                  type="button"
+                  onClick={handleEdit}
+                >업데이트</button>
               </div>
             </form>
           </div>
