@@ -144,7 +144,13 @@ function App() {
                 return <MedalInput key={item.text} item={item} />;
               })}
 
-              <div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "end",
+                  gap: "10px",
+                }}
+              >
                 <button type="submit">국가 추가</button>
                 <button type="button" onClick={handleEdit}>
                   업데이트
@@ -154,19 +160,28 @@ function App() {
           </div>
         </div>
         <div style={style}>
-          <div style={alignStyle}>
-            {listItems.map(function (item) {
-              return <div style={indexStyle}>{item}</div>;
-            })}
-          </div>
-
-          {allInfo
-            .sort((a, b) => b.gold - a.gold)
-            .map(function (info) {
-              return (
-                <Info key={info.id} info={info} handleDelete={handleDelete} />
-              );
-            })}
+          {allInfo.length === 0 ? (
+            <div>아직 추가된 국가가 없습니다.</div>
+          ) : (
+            <div>
+              <div style={alignStyle}>
+                {listItems.map(function (item) {
+                  return <div style={indexStyle}>{item}</div>;
+                })}
+              </div>
+              {allInfo
+                .sort((a, b) => b.gold - a.gold)
+                .map(function (info) {
+                  return (
+                    <Info
+                      key={info.id}
+                      info={info}
+                      handleDelete={handleDelete}
+                    />
+                  );
+                })}
+            </div>
+          )}
         </div>
       </div>
     </>
