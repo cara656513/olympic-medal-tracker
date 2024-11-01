@@ -90,12 +90,7 @@ function App() {
       }
     });
 
-    if (isFound) {
-      setAllInfo(editedAllInfo);
-    } else {
-      alert("먼저 국가 추가를 해주세요.");
-      return;
-    }
+    isFound ? setAllInfo(editedAllInfo) : alert("먼저 국가 추가를 해주세요.");
 
     setNation("");
     setGold("");
