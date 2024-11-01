@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Info from "./components/MedalList";
+import MedalList from "./components/MedalList";
 import MedalInput from "./components/MedalInput";
 
 function App() {
@@ -173,7 +173,7 @@ function App() {
                 .sort((a, b) => b.gold - a.gold)
                 .map(function (info) {
                   return (
-                    <Info
+                    <MedalList
                       key={info.id}
                       info={info}
                       handleDelete={handleDelete}

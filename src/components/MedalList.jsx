@@ -1,6 +1,4 @@
-import React from "react";
-
-const Info = ({ info, handleDelete }) => {
+const MedalList = ({ info, handleDelete }) => {
   const indexStyle = {
     width: "100px",
   };
@@ -25,4 +23,4 @@ const Info = ({ info, handleDelete }) => {
   );
 };
 
-export default Info;
+export default MedalList;
