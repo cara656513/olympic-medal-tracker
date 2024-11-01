@@ -120,7 +120,7 @@ function App() {
               style={alignStyle}
               onSubmit={handleSubmit}
             >
-              <div><h3>국가명</h3>
+              <div><h3>국가</h3>
                 <input
                   type="text"
                   value={nation}
