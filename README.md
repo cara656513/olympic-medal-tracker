@@ -1,10 +1,18 @@
-# React + Vite
+# Olympic Medal Tracker 만들기
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- 🔭[배포용 링크](https://olympic-medal-tracker-git-main-caras-projects-c508497a.vercel.app/)
+<br>
 
-Currently, two official plugins are available:
+## 💻기술 스택
+<div style="display:flex; justify-contents: center;">
+  <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/>
+</div>
+<br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✔필수 요구사항
+<br>
 
-링크:[https://cara656513.github.io/olympic-medal-tracker/](https://olympic-medal-tracker-git-main-caras-projects-c508497a.vercel.app/)
+## 👍선택 요구사항
+<br>
+
+## 🎥기능 구현
